@@ -55,7 +55,7 @@ We can run this module from anywhere only when the following dependencies must b
 
 Steps to run this module:
 
-- Change the directory 'cd ads-data-hub/root'
+- Change the directory 'cd GCP-Network/'
 - `terraform init` to get the plugins
 - `terraform plan` to see the infrastructure plan
 - `terraform apply -auto-approve` to apply the infrastructure build with auto approve
