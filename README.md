@@ -88,7 +88,7 @@ This module will activate these APIs in Service project so that we can create th
 
 ## Example Usage
 
----
+```
 module "shared_vpc" {
   source = "./modules/shared-vpc/"
 
@@ -103,4 +103,4 @@ module "shared_vpc" {
   shared_subnet_name  = var.shared_subnet_name
   shared_subnet_cidr  = var.shared_subnet_cidr
 }
----
+```
