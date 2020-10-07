@@ -22,6 +22,7 @@ resource "google_project_service" "host_project" {
 
 }
 
+
 resource "google_project_service" "service_project" {
   for_each                   = local.api_set_service
   project                    = var.service_project_id

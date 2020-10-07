@@ -1,6 +1,6 @@
-## Shared VPC Infrastructure Automation
+## Networking Infrastructure Automation
 
-This module will create a shared VPC to enable connectivity to shared resources.
+The module can create shared VPC to enable connectivity to shared resources.
 
  This module creates the following infrastructure:
 - A Shared VPC connection between the service project and Host project.
@@ -30,18 +30,6 @@ Service account permission at organization level.
 - `roles/compute.xpnAdmin` it shared the network between the projects
 - `roles/compute.networkAdmin` it manage the shared network
 - `roles/iam.serviceAccountAdmin` it manage the service accounts
-
-
-### To automate the predefine project mandatory requirements:
-
-Steps to do this:
-
-- Change to directory `cd ads-data-hub/helper/`
-- Now export the variables value i.e `project_id` and `organization_id` which we get from GCP Console.
-- Run the command `export project_id=""` to set the variable.
-- Run the command `export organization_id=""` to set the variable.
-- Run `bash setup-sa.sh` to setup the all above mandatory requirements.
-
 
 ### Software
 

@@ -1,6 +1,9 @@
 variable "credentials_file" {
   type = string
 }
+
+## Shared VPC
+
 variable "host_project_id" {
   description = "Project ID for host project to host the shared VPC"
   type        = string
@@ -15,7 +18,7 @@ variable "service_project_number" {
 }
 
 variable "region" {
-  default = "us-east1"
+  type = string
 }
 
 variable "enable_apis" {
@@ -46,11 +49,36 @@ variable "shared_network_name" {
 }
 
 variable "shared_subnet_name" {
-  default = "us-east1-shared-subnet"
+  default = "dev-shared-subnet"
 }
 
 variable "shared_subnet_cidr" {
   default = "172.20.11.0/24"
 }
 
+## VPC Peering
 
+variable "vpc1_project_id" {
+  description = "Enter the vpc1 project name"
+}
+variable "vpc1_network_name" {
+  description = "Enter the vpc1 project network name"
+}
+variable "vpc2_project_id" {
+  description = "Enter the vpc2ination project name"
+}
+variable "vpc2_network_name" {
+  description = "Enter the vpc2ination project network name"
+}
+
+## Interconnect
+
+variable "int_network_name" {
+  description = "Name of the network"
+}
+variable "int_project_id" {
+  description = "Project ID"
+}
+variable "int_router_name" {
+  description = "Name of the router connected to interconnect"
+}
