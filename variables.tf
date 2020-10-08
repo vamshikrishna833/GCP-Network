@@ -23,7 +23,7 @@ variable "service_project_number" {
 
 variable "enable_apis" {
   description = "Whether to actually enable the APIs. If false, this module is a no-op."
-  default     = "true"
+  default = "true"
 }
 
 variable "activate_apis_service" {
@@ -60,6 +60,19 @@ variable "shared_subnet_cidr" {
 
 #Development VPC
 
+variable "host_project_id_dev" {
+  description = "Project ID for host project to host the shared VPC"
+  type        = string
+}
+variable "service_project_id_dev" {
+  description = "Project ID for service project"
+  type        = string
+}
+variable "service_project_number_dev" {
+  description = "Required to provide service account in service project network usuer role."
+  type        = string
+}
+
 variable "shared_network_name_dev" {
   default = "shared-network-dev"
 }
@@ -74,6 +87,19 @@ variable "shared_subnet_cidr_dev" {
 
 #Staging VPC
 
+variable "host_project_id_stag" {
+  description = "Project ID for host project to host the shared VPC"
+  type        = string
+}
+variable "service_project_id_stag" {
+  description = "Project ID for service project"
+  type        = string
+}
+variable "service_project_number_stag" {
+  description = "Required to provide service account in service project network usuer role."
+  type        = string
+}
+
 variable "shared_network_name_stag" {
   default = "shared-network-stag"
 }
@@ -87,6 +113,19 @@ variable "shared_subnet_cidr_stag" {
 }
 
 #Production VPC
+
+variable "host_project_id_prod" {
+  description = "Project ID for host project to host the shared VPC"
+  type        = string
+}
+variable "service_project_id_prod" {
+  description = "Project ID for service project"
+  type        = string
+}
+variable "service_project_number_prod" {
+  description = "Required to provide service account in service project network usuer role."
+  type        = string
+}
 
 variable "shared_network_name_prod" {
   default = "shared-network-prod"
