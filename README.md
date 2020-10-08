@@ -32,17 +32,6 @@ Service account permission at organization level.
 - `roles/iam.serviceAccountAdmin` it manage the service accounts
 
 
-### To automate the predefine project mandatory requirements:
-
-Steps to do this:
-
-- Change to directory `cd ads-data-hub/helper/`
-- Now export the variables value i.e `project_id` and `organization_id` which we get from GCP Console.
-- Run the command `export project_id=""` to set the variable.
-- Run the command `export organization_id=""` to set the variable.
-- Run `bash setup-sa.sh` to setup the all above mandatory requirements.
-
-
 ### Software
 
 We can run this module from anywhere only when the following dependencies must be available:
