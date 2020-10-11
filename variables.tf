@@ -1,9 +1,6 @@
-variable "credentials_file" {
-  type = string
-}
-
 variable "region" {
-  default = "us-east1"
+  description = "Default region, if nothing specified in any module"
+  default     = "us-east1"
 }
 
 #Shared VPC
@@ -23,13 +20,14 @@ variable "service_project_number" {
 
 variable "enable_apis" {
   description = "Whether to actually enable the APIs. If false, this module is a no-op."
-  default = "true"
+  default     = "true"
 }
 
 variable "activate_apis_service" {
   description = "The list of apis to activate within the project"
   type        = list(string)
   default = [
+    "iam.googleapis.com",
     "servicenetworking.googleapis.com",
     "serviceusage.googleapis.com",
   ]
@@ -39,6 +37,7 @@ variable "activate_apis_host" {
   description = "The list of apis to activate within the project"
   type        = list(string)
   default = [
+    "iam.googleapis.com",
     "servicenetworking.googleapis.com",
     "serviceusage.googleapis.com",
   ]
@@ -47,15 +46,18 @@ variable "activate_apis_host" {
 #Network VPC
 
 variable "shared_network_name" {
-  default = "shared-network"
+  description = "Name for the Common VPC"
+  default     = "shared-network"
 }
 
 variable "shared_subnet_name" {
-  default = "us-east1-shared-subnet"
+  description = "Name for subnet to be created"
+  default     = "us-east1-shared-subnet"
 }
 
 variable "shared_subnet_cidr" {
-  default = "10.0.0.0/16"
+  description = "CIDR for network VPC"
+  default     = "10.0.0.0/16"
 }
 
 #Development VPC
@@ -82,7 +84,8 @@ variable "shared_subnet_name_dev" {
 }
 
 variable "shared_subnet_cidr_dev" {
-  default = "10.1.0.0/16"
+  description = "CIDR for dev VPC"
+  default     = "10.1.0.0/16"
 }
 
 #Staging VPC
@@ -109,7 +112,8 @@ variable "shared_subnet_name_stag" {
 }
 
 variable "shared_subnet_cidr_stag" {
-  default = "10.2.0.0/16"
+  description = "CIDR for staging VPC"
+  default     = "10.2.0.0/16"
 }
 
 #Production VPC
@@ -136,7 +140,8 @@ variable "shared_subnet_name_prod" {
 }
 
 variable "shared_subnet_cidr_prod" {
-  default = "10.3.0.0/16"
+  description = "CIDR for production VPC"
+  default     = "10.3.0.0/16"
 }
 
 #Interconnect

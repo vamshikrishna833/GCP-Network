@@ -45,20 +45,6 @@ resource "google_compute_network" "shared_network" {
 }
 
 
-/*****************************************
- Create the subnets in shared network
-*****************************************/
-
-resource "google_compute_subnetwork" "subnetwork1" {
-  region                   = var.region
-  project                  = var.host_project_id
-  network                  = google_compute_network.shared_network.self_link
-  name                     = "${var.shared_subnet_name}-${random_id.id.hex}"
-  ip_cidr_range            = var.shared_subnet_cidr
-  private_ip_google_access = true
-
-}
-
 /******************************************
  Allow the hosted network to be hit over ICMP, SSH, and HTTP.
 *****************************************/
@@ -108,8 +94,8 @@ resource "google_compute_shared_vpc_service_project" "service_project_1" {
   Default Service Account configuration
  *****************************************/
 resource "random_id" "id" {
-    byte_length = 2
-  }
+  byte_length = 2
+}
 
 resource "google_service_account" "default_service_account" {
   account_id   = "project-service-account-${random_id.id.hex}"
