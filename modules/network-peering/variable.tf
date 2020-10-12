@@ -14,7 +14,3 @@ variable "vpc2_network_name" {
   description = "Enter the vpc2ination project network name"
   type        = string
 }
-variable "depends_on_connection" {
-  description = "To check if VPC peering is free"
-  type        = string
-}
