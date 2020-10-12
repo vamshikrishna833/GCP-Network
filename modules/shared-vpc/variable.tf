@@ -1,9 +1,11 @@
 variable "host_project_id" {
-  default = ""
+  description = "Project ID for host project to host the shared VPC"
+  type        = string
 }
 
 variable "service_project_id" {
-  default = ""
+  description = "Project ID for service project"
+  type        = string
 }
 
 variable "service_project_number" {
@@ -12,7 +14,9 @@ variable "service_project_number" {
 }
 
 variable "region" {
-  default = "us-east1"
+  description = "Default region, if nothing specified in any module"
+  type        = string
+  default     = "us-east1"
 }
 
 variable "enable_apis" {
