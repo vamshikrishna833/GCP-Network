@@ -93,7 +93,7 @@ resource "google_compute_shared_vpc_service_project" "service_project_1" {
 /******************************************
   Default Service Account configuration
  *****************************************/
-/*resource "random_id" "id" {
+resource "random_id" "id" {
   byte_length = 2
 }
 
@@ -101,7 +101,7 @@ resource "google_service_account" "default_service_account" {
   account_id   = "project-service-account-${random_id.id.hex}"
   display_name = "${var.service_project_id} Project Service Account"
   project      = var.service_project_id
-}*/
+}
 
 /******************************************************************************************************************
   compute.networkUser role granted to APIs Service account, Project Service Account on shared VPC
