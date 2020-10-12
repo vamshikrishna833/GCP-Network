@@ -1,15 +1,25 @@
 variable "host_project_id" {
-  default = ""
+  description = "Project ID for host project to host the shared VPC."
+  default     = ""
+  type        = string
 }
 variable "region" {
-  default = ""
+  description = "Pass the Region value for the network."
+  default     = ""
+  type        = string
 }
 variable "shared_network" {
-  default = ""
+  description = "Required to provide Network Name."
+  default     = ""
+  type        = string  
 }
 variable "shared_subnet_name" {
-  default = ""
+  description = "Required to provide Subnet Name."
+  default     = ""
+  type        = string    
 }
 variable "shared_subnet_cidr" {
-  default = ""
+  description = "Required to provide Subnet CIDR."
+  default     = ""
+  type        = string  
 }
