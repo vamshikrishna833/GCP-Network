@@ -46,13 +46,19 @@ variable "disable_dependent_services" {
 }
 
 variable "shared_network_name" {
-  default = ""
+  description = "VPC name for the network"
+  default     = ""
+  type        = string
 }
 
 variable "shared_subnet_name" {
-  default = ""
+  description = "Subnet name for the network"
+  default     = ""
+  type        = string
 }
 
 variable "shared_subnet_cidr" {
-  default = ""
+  description = "Subnet CIdr for the network"
+  default     = ""
+  type        = string
 }
